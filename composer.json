@@ -1,0 +1,46 @@
+{
+    "name": "TechnikaIt/sqs-bundle",
+    "description": "SQS Symfony bundle",
+    "type": "symfony-bundle",
+    "homepage": "http://www.acrux.net.pl",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wojciech Oronski",
+            "homepage": "http://www.acrux.net.pl"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "symfony/dependency-injection": "~2.7|~3.3",
+        "symfony/config": "~2.8|~3.3",
+        "symfony/console": "~2.7|~3.3",
+        "aws/aws-sdk-php-symfony": "~2.0"
+    },
+    "require-dev": {
+        "symfony/framework-bundle": "~2.3|~3.0",
+        "symfony/yaml": "~2.3|~3.0",
+        "phpunit/phpunit": "6.0.*",
+        "phpmd/phpmd": "2.6.*",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-4": {
+            "TechnikaIt\\SqsBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/app/cache/",
+            "/Tests/app/logs/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TechnikaIt\\SqsBundle\\": "Tests/"
+        },
+        "classmap": [
+            "Tests/app"
+        ]
+    }
+}

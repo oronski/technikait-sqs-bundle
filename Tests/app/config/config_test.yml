@@ -1,0 +1,23 @@
+# Framework Configuration
+framework:
+    secret: 'secret'
+    router:
+        resource: ~
+        strict_requirements: '%kernel.debug%'
+    test: ~
+
+aws:
+    version: latest
+    region: us-central-1
+    credentials:
+        key: not-a-real-key
+        secret: '@@not-a-real-secret'
+
+TechnikaIt_sqs:
+    sqs:
+        queues:
+            basic_queue:
+                queue_url: 'aws-basic-queue-url'
+                worker: 'TechnikaIt\SqsBundle\Tests\app\Worker\BasicWorker'
+                attributes:
+                    receive_message_wait_time_seconds: 20
