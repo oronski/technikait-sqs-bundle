@@ -5,7 +5,19 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        
+        <service id="TechnikaIt.sqs.queue_factory" class="TechnikaIt\SqsBundle\Service\QueueFactory">
+            <argument type="service" id="aws.sqs"/>
+        </service>
+
+        <service id="TechnikaIt.sqs.queue_worker" class="TechnikaIt\SqsBundle\Service\Worker" public="true">
+            <call method="setLogger">
+                <argument type="service" id="logger" on-invalid="ignore"/>
+            </call>
+        </service>
+
+        <service id="TechnikaIt.sqs.queue_manager" class="TechnikaIt\SqsBundle\Service\QueueManager" public="true">
+            <argument type="service" id="aws.sqs"/>
+        </service>
     </services>
 
 </container>
