@@ -22,7 +22,7 @@ class ClearCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('TechnikaIt:sqs:purge')
+            ->setName('TechnikaIt:sqs:clear')
             ->addArgument(
                 'name',
                 InputArgument::REQUIRED,
