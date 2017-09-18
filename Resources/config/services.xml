@@ -18,6 +18,32 @@
         <service id="TechnikaIt.sqs.queue_manager" class="TechnikaIt\SqsBundle\Service\QueueManager" public="true">
             <argument type="service" id="aws.sqs"/>
         </service>
+
+        <service id="TechnikaIt.sqs.command.queue_attr" class="TechnikaIt\SqsBundle\Command\AttrCommand">
+            <tag name="console.command" command="TechnikaIt:sqs:attr"/>
+        </service>
+
+        <service id="TechnikaIt.sqs.command.queue_clear" class="TechnikaIt\SqsBundle\Command\ClearAttrCommand">
+            <tag name="console.command" command="TechnikaIt:sqs:clear"/>
+        </service>        
+
+        <service id="TechnikaIt.sqs.command.queue_create" class="TechnikaIt\SqsBundle\Command\CreateAttrCommand">
+            <tag name="console.command" command="TechnikaIt:sqs:create"/>
+        </service>        
+
+        <service id="TechnikaIt.sqs.command.queue_delete" class="TechnikaIt\SqsBundle\Command\DeleteAttrCommand">
+            <tag name="console.command" command="TechnikaIt:sqs:delete"/>
+        </service> 
+
+        <service id="TechnikaIt.sqs.command.queue_list" class="TechnikaIt\SqsBundle\Command\DeleteAttrCommand">
+            <tag name="console.command" command="TechnikaIt:sqs:list"/>
+        </service>                
+        <service id="TechnikaIt.sqs.command.queue_update" class="TechnikaIt\SqsBundle\Command\UpdateAttrCommand">
+            <tag name="console.command" command="TechnikaIt:sqs:update"/>
+        </service> 
+        <service id="TechnikaIt.sqs.command.queue_worker" class="TechnikaIt\SqsBundle\Command\WorkerAttrCommand">
+            <tag name="console.command" command="TechnikaIt:sqs:worker"/>
+        </service> 
     </services>
 
 </container>
